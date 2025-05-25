@@ -1,0 +1,99 @@
+/*! Mikeotizels Sharer CSS v1.0.0 | Copyright 2022 Michael Otieno | Licensed under MIT */
+
+.btn-share {
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-share:hover {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-share:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+.btn-clipboard {
+    color: #ffffff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-clipboard:hover {
+    color: #ffffff;
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+/*.btn-clipboard:focus { 
+    color: #ffffff;
+    background-color: #5a6268;
+    border-color: #545b62;
+    box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
+}*/
+
+.btn-mail {
+    color: #ffffff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-mail:hover {
+    color: #ffffff;
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+/*.btn-mail:focus { 
+    color: #ffffff;
+    background-color: #c82333;
+    border-color: #bd2130;
+    box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5); 
+}*/
+
+.btn-whatsapp {
+    color: #ffffff;
+    background-color: #25d366; 
+    border-color: #25d366;
+}
+
+.btn-whatsapp:hover { 
+    color: #ffffff;
+    background-color: #28a745;
+    border-color: #28a745; 
+}
+
+/*.btn-whatsapp:focus { 
+}*/
+
+.btn-facebook {
+    color: #ffffff;
+    background-color: #3b5998; 
+    border-color: #3b5998;
+}
+
+.btn-facebook:hover {  
+    color: #ffffff;
+    background-color: #2d4373;
+    border-color: #2d4373;
+}
+
+/*.btn-facebook:focus { 
+}*/
+
+.btn-twitter {
+    color: #ffffff;
+    background-color: #1da1f2; 
+    border-color: #1da1f2;
+}
+
+.btn-twitter:hover {
+    color: #ffffff;
+    background-color: #0099d4;
+    border-color: #0099d4;  
+}
+
+/*.btn-twitter:focus { 
+}*/
