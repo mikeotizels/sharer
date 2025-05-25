@@ -1,0 +1,145 @@
+<?php
+$url   = "http://example.com/page";
+$title = "Example Page";
+$text  = urlencode(
+    sprintf('Hi please check out this link: %s', $url
+));
+?>
+<!DOCTYPE html>
+<html data-theme="light" data-bs-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Michael Otieno">
+    <title>Sharer Modal Demo - Mikeotizels WebKit v2.0.0</title>
+    <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/dist/css/bootstrap.min.css?v=5.3.3">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/fontawesome/css/all.min.css?v=6.7.2">
+    <link rel="stylesheet" type="text/css" href="assets/css/mo.theme.min.css?v=2.0.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/mo.sharer.min.css?v=2.0.0">
+</head>
+<body>
+    <header id="header" class="my-2">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center border-bottom">
+                <div>
+                    <h1 class="display-5">Sharer Modal Demo</h1>
+                </div>
+                <div id="themeToggler" class="theme-toggler theme-toggler-lg">
+                    <label id="themeTogglerLabel" for="themeTogglerCheck" class="theme-toggler-label" title="Toggle theme">
+                        <input type="checkbox" id="themeTogglerCheck" class="theme-toggler-check">
+                        <span id="themeTogglerIcon" class="theme-toggler-icon"></span>
+                    </label>
+                </div><!-- #themeToggler -->               
+            </div><!-- .header-wrapper -->
+        </div><!-- .container -->     
+    </header><!-- #header -->
+    <main id="main" class="main vh-100 mb-4">
+        <div class="container">
+            <div class="mt-4">
+                <button type="button" class="btn btn-share btn-sm" data-bs-toggle="modal" data-bs-target="#sharerModal" title="Share link">
+                    <span class="fa fa-share-alt me-1"></span>Share
+                </button>
+            </div>
+        </div>
+    </main><!-- #main -->
+    <footer class="footer text-center border-top">
+        <div class="container py-2">
+            <p class="mb-0">Mikeotizels WebKit v2.0.0</p>
+            <small>&copy; 2022-2024 Michael Otieno</small>
+        </div>
+    </footer><!-- #footer -->
+    <!--  -->
+    <!--  -->
+    <!-- begin::modal#sharer -->
+    <div id="sharerModal" class="modal fade" role="dialog" aria-modal="true" aria-label="Share" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Share</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
+                </div><!-- .modal-header -->
+                <div class="modal-body">
+                    <div class="share-content">
+                        <p class="share-intro">Copy the link below to share "<b><?=$title?></b>" with friends and family.</p>
+                        <div class="share-option-group">
+                            <div class="share-option-copy">
+                                <div class="d-flex align-items-center">
+                                    <div class="me-auto overflow-hidden">
+                                        <p class="share-link"><?=$url?></p>
+                                    </div><!-- .-left- -->
+                                    <div class="ms-auto">
+                                        <button type="button" class="share-btn share-btn-clipboard" data-toggle="clipboard" data-clipboard-action="copy" data-clipboard-text="<?=$url?>" aria-label="Copy" title="Copy to clipboard">
+                                            <span class="far fa-copy me-1"></span>Copy
+                                        </button>
+                                    </div><!-- .-right- -->
+                                </div><!-- .d-flex --> 
+                            </div><!-- .share-option #copy -->
+                        </div><!-- .share-option-group --> 
+                        <div class="share-option-group-divider">
+                            <div class="share-option-group-divider-label" data-content="OR SHARE VIA">
+                            </div><!-- .share-option-group-divider-label -->
+                        </div><!-- .share-option-group-divider -->
+                        <div class="share-option-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="share-option">
+                                        <button type="button" role="button" class="share-btn share-btn-mail" id="shareOptionMail" data-toggle="share" data-channel="mail" data-subject="<?=$title?>" data-body="<?=$text?>" aria-label="Mail" title="Share via Mail">
+                                            <span class="far fa-envelope me-1"></span>Mail
+                                        </button>
+                                    </div><!-- .share-option #mail -->
+                                    <div class="share-option">
+                                        <button type="button" role="button" class="share-btn share-btn-whatsapp" id="shareOptionWhatsApp" data-toggle="share" data-channel="whatsapp" data-text="<?=$text?>" aria-label="WhatsApp" title="Share via WhatsApp">
+                                            <span class="fab fa-whatsapp me-1"></span>WhatsApp
+                                        </button>
+                                    </div><!-- .share-option #whatsapp -->
+                                    <div class="share-option">
+                                        <button type="button" role="button" class="share-btn share-btn-facebook" id="shareOptionFacebook" data-toggle="share" data-channel="facebook" data-url="<?=$url?>" aria-label="Facebook" title="Share on Facebook">
+                                            <span class="fab fa-facebook me-1"></span>Facebook
+                                        </button>
+                                    </div><!-- .share-option #facebook -->
+                                    <div class="share-option">
+                                        <button type="button" role="button" class="share-btn share-btn-twitter" id="shareOptionTwitter" data-toggle="share" data-channel="twitter" data-url="<?=$url?>" data-text="<?=$text?>" aria-label="Twitter" title="Share on X (Twitter)">
+                                            <span class="fab fa-x-twitter me-1"></span>Twitter
+                                    </div><!-- .share-option #twitter -->
+                                </div><!-- .col- -->
+                                <div class="col-md-6">
+                                    <div class="share-option">
+                                        <button type="button" role="button" class="share-btn share-btn-linkedin" id="shareOptionLinkedIn" data-toggle="share" data-channel="linkedin" data-url="<?=$url?>" data-title="<?=$title?>" aria-label="LinkedIn" title="Share on LinkedIn">
+                                            <span class="fab fa-linkedin me-1"></span>LinkedIn
+                                        </button>
+                                    </div><!-- .share-option #linkedin -->
+                                    <div class="share-option">
+                                        <button type="button" role="button" class="share-btn share-btn-reddit" id="shareOptionReddit" data-toggle="share" data-channel="reddit" data-url="<?=$url?>" data-title="<?=$title?>" aria-label="Reddit" title="Share on Reddit">
+                                            <span class="fab fa-reddit me-1"></span>Reddit
+                                        </button>
+                                    </div><!-- .share-option #reddit -->
+                                    <div class="share-option">
+                                        <button type="button" role="button" class="share-btn share-btn-pinterest" id="shareOptionPinterest" data-toggle="share" data-channel="pinterest" data-url="<?=$url?>" aria-label="Pinterest" title="Share on Pinterest">
+                                            <span class="fab fa-pinterest me-1"></span>Pinterest
+                                        </button>
+                                    </div><!-- .share-option #pinterest -->
+                                    <div class="share-option">
+                                        <button type="button" role="button" class="share-btn share-btn-webshare" id="shareOptionWebshare" data-toggle="webshare" data-url="<?=$url?>" data-title="<?=$title?>" data-text="<?=$text?>" aria-label="WebShare" title="Toggle native WebShare" hidden="true">
+                                            <span class="fa fa-share-from-square me-1"></span>More Options
+                                        </button>
+                                    </div><!-- .share-option #webshare -->
+                                </div><!-- .col- -->
+                            </div><!-- .row -->
+                        </div><!-- .share-option-group --> 
+                    </div><!-- .share-content -->
+                </div><!-- .modal-body -->
+            </div><!-- .modal-content -->
+        </div><!-- .modal-dialog -->
+    </div><!-- #sharerModal -->
+    <!-- end::modal#sharer -->
+    <!--  -->
+    <!--  -->
+    <script src="assets/vendor/jquery/dist/jquery.min.js?v=3.7.0"></script>
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js?v=5.3.3"></script>
+    <script src="assets/vendor/clipboard/dist/clipboard.min.js?v=2.0.11" defer></script>
+    <script src="assets/js/mo.theme.min.js?v=2.0.0" defer></script>
+    <script src="assets/js/mo.clipboard.min.js?v=1.0.0" defer></script>
+    <script src="assets/js/mo.webshare.min.js?v=1.0.0" defer></script>
+    <script src="assets/js/mo.sharer.min.js?v=2.0.0" defer></script>
+</body>
+</html>
